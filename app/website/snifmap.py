@@ -2,8 +2,9 @@ import plotly.express as px
 import json
 import os
 
+__author__ = "IamKrytas"
 __name__ = "snifmap"
-__version__ = "1.0.0"
+__version__ = "1.0.1"
 
 def get_data(filename: str) -> dict:
     try:
@@ -45,10 +46,13 @@ def get_map(filename: str) -> str:
 
     #save map to src folder
     try:
-        html_filename = "map.html"
-        html_path = os.path.join("src", html_filename)
-        fig.write_html(html_path)
-        print(f"Map saved to {html_path} 2/2")
-        return html_path
+        html = os.path.join("src")
+        if not os.path.exists(html):
+            os.makedirs(html)
+        directory = f"{html}/map.html"
+
+        fig.write_html(directory)
+        print(f"Map saved to {directory} 2/2")
+        return directory
     except:
         raise ("Error during save map")

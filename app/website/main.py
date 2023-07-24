@@ -6,25 +6,30 @@ app = Flask(__name__)
 app.secret_key = "0123456789"
 
 # service home page
-@app.route('/')
+@app.route("/")
 def home():
-    return render_template('home.html')
+    return render_template("home.html")
 
 # service upload file
-@app.route('/', methods=['POST'])
+@app.route("/", methods=["POST"])
 def map():
     try:
-        file = request.files['file']
-        file.save(os.path.join('jsons', file.filename)) # save file to jsons folder
+        file = request.files["file"]
+        jsons = os.path.join("jsons")
+        if not os.path.exists(jsons):
+            os.makedirs(jsons)
+
+        file.save(os.path.join(jsons, file.filename))
+
         path = f"jsons/{file.filename}"
 
-        html_path = snifmap.get_map(path)
+        directory = snifmap.get_map(path)
 
-        with open(html_path, "r") as f: # read html file with map
+        with open(directory, "r") as f: # read html file with map
             content = f.read()
-        return Response(content, content_type='text/html')
+        return Response(content, content_type="text/html")
     except:
-        return redirect(url_for('home'))
+        return redirect(url_for("home"))
 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)
