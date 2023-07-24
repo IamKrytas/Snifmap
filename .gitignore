@@ -1,0 +1,4 @@
+# Ignore content of app/jsons directory and all pycache files
+/app/jsons/*
+/app/src/*
+__pycache__/

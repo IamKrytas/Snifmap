@@ -1,0 +1,35 @@
+/*styles*/
+#main-content {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+    border: 3px solid #73ad21;
+    padding: 20px;
+}
+
+h1 {
+    color: red;
+    text-align: center;
+}
+
+#select-file {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+p #btn-sub {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+/*hover*/
+p #btn-sub:hover {
+    background-color: #3b4e2b;
+    color: white;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+        <title>Home Page</title>
+    </head>
+    <body>
+        <h1>File Upload</h1>
+        <form id="select-file" method="POST" action="" enctype="multipart/form-data">
+            <div id="main-content">
+                <p><input id="btn-sel" type="file" name="file" accept=".json" /></p>
+            </div>
+            <p><input id="btn-sub" type="submit" value="Submit" /></p>
+        </form>
+        <!--<script src="{{ url_for('static', filename='script.js') }}"></script>-->
+    </body>
+</html>
