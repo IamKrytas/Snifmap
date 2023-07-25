@@ -3,17 +3,17 @@ import json
 import os
 
 __author__ = "IamKrytas"
-__name__ = "snifmap"
-__version__ = "1.0.1"
+__name__ = "Snifmap"
+__version__ = "1.0.2"
 
 def get_data(filename: str) -> dict:
     try:
         with open(filename) as f:
             raw = json.load(f)
             data = dict(
+                id = range(1, len(raw) + 1),
                 lat = [item["latitude"] for item in raw],
                 lon = [item["longitude"] for item in raw],
-                id = range(1, len(raw) + 1),
                 speed = [ms_to_kmh(item["gpsSpeed"]) for item in raw]
             )
             print("Downloaded data from json file 1/2")
@@ -30,9 +30,9 @@ def get_map(filename: str) -> str:
     # Create data dict
     fetch = get_data(filename)
     data = dict(
-        lon = fetch["lon"],
-        lat = fetch["lat"],
         id = fetch["id"],
+        lat = fetch["lat"],
+        lon = fetch["lon"],
         speed = fetch["speed"]
     )
     
