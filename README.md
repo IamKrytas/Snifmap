@@ -5,8 +5,9 @@ A web application that displays a map with a road route, taking into account spe
 ## Table of Contents
 
 - [Introduction](#introduction)
-- [How to Run](#how-to-run)
-- [Project structure](#Project-structure)
+- [How to run](#how-to-run)
+- [Project structure](#project-structure)
+- [Example json file](#example-json-file)
 
 ## Introduction
 
@@ -14,7 +15,7 @@ This tool simplifies the process of visualizing JSON data in a user-friendly for
 
 Once you've selected the desired **.json** file, it will be saved in the designated folder **app/jsons**. Following the file upload and click the Submit button, the application will automatically generate an **index.html** file in the **app/src** directory and open in browser.
 
-## How to Run
+## How to run
 
 If you have docker you can use this commends to run app
 
@@ -55,7 +56,7 @@ After a while the application will open in ```localhost:5000```
 
 *directory ```app/src``` and ```app/jsons``` will creating automaticly.
 
-## Example JSON file
+## Example json file
 Your JSON file must have this properties
 * latitude
 * longitude
@@ -75,4 +76,4 @@ Your JSON file must have this properties
 | :---------- | :------ | :---- | :------------------- |
 | `latitude`  | `float` | ----- | Earth latitude       |
 | `longitude` | `float` | ----- | Earth longitude      |
-| `gpsSpeed`  | `float` | `m/h` | Speed in each points |
+| `gpsSpeed`  | `float` | `m/s` | Speed in each points |
